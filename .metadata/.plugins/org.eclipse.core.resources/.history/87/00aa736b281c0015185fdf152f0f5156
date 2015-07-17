@@ -1,0 +1,22 @@
+package ssh_ex;
+
+import net.schmizz.sshj.SSHClient;
+import net.schmizz.sshj.connection.channel.direct.Session;
+import net.schmizz.sshj.connection.channel.direct.Session.Command;
+
+
+public class sample {
+	public static void main(String[] args) {
+		SSHClient ssh = new SSHClient();
+		ssh.loadKnownHosts();
+		ssh.connect("http://127.0.0.1 -p 2222");
+		ssh.authPublickey("hadoop");
+		Session session = ssh.startSession();
+		Command cmd = session.exec("yourCommand");
+		System.out.println(cmd.toString());
+		session.close();
+		ssh.disconnect();
+		
+		System.out.println("hello");
+	}
+}

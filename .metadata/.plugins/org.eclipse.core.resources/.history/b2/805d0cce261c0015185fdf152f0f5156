@@ -1,0 +1,12 @@
+package ssh_ex;
+
+public class sample {
+	public static void main(String[] args) {
+		Process p = Runtime.getRuntime().exec("ssh myhost");
+		PrintStream out = new PrintStream(p.getOutputStream());
+		BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+		
+		System.out.println("hello");
+	}
+}

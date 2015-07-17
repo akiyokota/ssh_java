@@ -1,0 +1,25 @@
+package ssh_ex;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class sample {
+	public static void main(String[] args) {
+		Shell shell = new SSH(
+				  "ssh.example.com", 22,
+				  "yegor", "-----BEGIN RSA PRIVATE KEY-----..."
+				);
+				File file = new File("/tmp/data.txt");
+				new Shell.Safe(shell).exec(
+				  "cat > d.txt && grep 'some text' d.txt",
+				  new FileInputStream(file),
+				  Logger.stream(Level.INFO, this),
+				  Logger.stream(Level.WARNING, this)
+				);
+
+		
+		System.out.println("hello");
+	}
+}

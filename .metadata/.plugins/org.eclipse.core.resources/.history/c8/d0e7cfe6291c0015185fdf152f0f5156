@@ -1,0 +1,30 @@
+package ssh_ex;
+
+import java.io.IOException;
+
+import net.schmizz.sshj.SSHClient;
+import net.schmizz.sshj.connection.channel.direct.Session;
+import net.schmizz.sshj.connection.channel.direct.Session.Command;
+
+
+public class sample {
+	public static void main(String[] args) {
+		SSHClient ssh = new SSHClient();
+		try {
+			//ssh.loadKnownHosts();
+			ssh.connect("ssh ayoko001@well.cs.ucr.edu");
+			ssh.authPublickey("Zq/jph7v");
+			Session session = ssh.startSession();
+			Command cmd = session.exec("ls");
+			System.out.println(cmd.toString());
+			session.close();
+			ssh.disconnect();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		System.out.println("hello");
+	}
+}

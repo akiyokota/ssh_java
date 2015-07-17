@@ -1,0 +1,22 @@
+package ssh_ex;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class sample {
+	public static void main(String[] args) {
+		SSHClient ssh = new SSHClient();
+		ssh.loadKnownHosts();
+		ssh.connect("nameOfServer");
+		ssh.authPublickey("userId");
+		Session session = ssh.startSession();
+		Command cmd = session.exec("yourCommand");
+		System.out.println(cmd.getOutputAsString());
+		session.close();
+		ssh.disconnect();
+		
+		System.out.println("hello");
+	}
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.jdt.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.link0</name>
+			<type>2</type>
+			<location>C:/Users/ayokota/Documents/Jars/slf4j</location>
+		</link>
+		<link>
+			<name>.link1</name>
+			<type>2</type>
+			<location>C:/Users/ayokota/Documents/Jars/ssh_jars/jsch-0.1.53</location>
+		</link>
+		<link>
+			<name>.link4</name>
+			<type>2</type>
+			<location>C:/Users/ayokota/Documents/hadoop-2.3.0/share/hadoop/common/lib</location>
+		</link>
+	</linkedResources>
+</projectDescription>
